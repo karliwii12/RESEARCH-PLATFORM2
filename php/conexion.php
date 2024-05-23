@@ -4,7 +4,6 @@
     // if ($conexion){
     //     echo"
     //     conexion Exitosa";
-
     // }else{
     //     echo"
     //     error";

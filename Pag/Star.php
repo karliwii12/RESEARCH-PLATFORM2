@@ -2,7 +2,6 @@
 session_start();
 if (!isset($_SESSION["Email"]) ) { 
     echo"<script>
-    
     location.href = '../Index.php';
     </script>";
 exit(); 
