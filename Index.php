@@ -13,24 +13,24 @@
 
 <body>
     <div class="content">
-        <div class="container " style=" padding: 5%; width: 85%; margin: auto; ">
-            <div class="row " style="max-width: 100%; padding:0%; max-height: 100%;">
-                <div class="col-md-5 d-flex justify-content-center align-items-center" style="padding:0; background: #000000; ">
+        <div class="container " style=" padding: 5%; width: 100%; margin: auto; height: 100%; ">
+            <div class="row " style="max-width: 160%; padding:0%; max-height: 160%; height:23em">
+                <div class="col-md-5 d-flex justify-content-center align-items-center" style="padding:0; background: #000000;">
                     <img src="img/FondoPrueba.jpg" alt="" style="width: 100%; max-height: 150%">
                     <div class="cont">
                         <!-- <img src="" alt="LOGO" width="60%" style="border-radius: 50%;"> -->
                     </div>
                 </div>
-                <div class="col-md-7" style="background: #FFFFFF; padding:0;">
+                <div class="col-md-7" style="background: #FFFFFF; padding:0;  ">
                     <header class="d-flex justify-content-center align-items-center">
                         <nav class="navbar navbar-expand-lg">
-                        <div class="container-fluid">
-                                <a class="navbar-brand"  href="#"  data-bs-toggle="collapse" data-bs-target="#collapse_Inicio " aria-expanded="false" aria-controls="collapse_Inicio">Inicio</a>
-                                <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#" data-bs-toggle="collapse" data-bs-target="#collapse_Inicio " aria-expanded="false" aria-controls="collapse_Inicio">Inicio</a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav" style="padding: 8px; ">
-                                    <ul class="navbar-nav" >
+                                    <ul class="navbar-nav">
                                         <li style=" padding: 7px;border-radius: 7px;" class="nav-item" data-bs-toggle="collapse" data-bs-target="#collapse_Acerca_de">
                                             <a style="color: #000000;" class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapse_Acerca_de " aria-expanded="false" aria-controls="collapse_Acerca_de">Acerca de </a>
                                         </li> &ensp;
@@ -40,7 +40,7 @@
                                         <li style=" padding: 7px; border-radius: 7px;" class="nav-item" data-bs-toggle="collapse" data-bs-target="#collapse_Estadistica">
                                             <a style="color:#000000" class="nav-link disabled " href="#" data-bs-toggle="collapse" data-bs-target="#collapse_Estadistica">Estadisticas</a>
                                         </li> &ensp;
-                                        <button style=" padding: 7px; background:#511367; color:#FFFFFF; " type="button" class="btn btn" data-bs-toggle="collapse" data-bs-target="#collapse_InicioSesion">Inicio sesión</button>
+                                        <button style=" padding: 7px; background:#511367; color:#FFFFFF; " type="button" class="btnfos5" data-bs-toggle="collapse" data-bs-target="#collapse_InicioSesion">Inicio sesión</button>
                                     </ul>
                                 </div>
                             </div>
@@ -49,10 +49,10 @@
                     <main>
                         <div class="accordion" id="accordionExample">
                             <div class="container mt-4 justify-content-center">
-                                <div id="collapse_InicioSesion" class="collapse" data-bs-parent="#accordionExample" >
-                                    <div class=" container" style="width: 80%;" >
-                                        <form action="php/Iniciar_Sesion.php" method="post" >
-                                            <div class="mb-4 mt-4" >
+                                <div id="collapse_InicioSesion" class="collapse" data-bs-parent="#accordionExample">
+                                    <div class=" container" style="width: 80%;">
+                                        <form action="php/Iniciar_Sesion.php" method="post">
+                                            <div class="mb-4 mt-4">
                                                 <label for="email" class="form-label">Email:</label>
                                                 <input name="EnviarEmail" required type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                                             </div>
@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="form-check mb-3">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input"  type="checkbox" onclick=" visibility() " name="remember"> Ver Contraseña
+                                                    <input class="form-check-input" type="checkbox" onclick=" visibility() " name="remember"> Ver Contraseña
 
                                                 </label>
                                             </div>
@@ -74,7 +74,17 @@
                             </div>
                             <div class="container mt-3">
                                 <div id="collapse_Inicio" class="collapse" data-bs-parent="#accordionExample">
-                                    prueba mamas huevo 
+                                    <div class="contenerdorInicio" >
+
+                                        <h1 class="tituloInicio">Nature Landing page</h1>
+                                        <p class="contextoInicio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, fugiat iusto provident cum soluta qui culpa ad voluptas repellat nulla error officiis eligendi consequatur voluptate id. Nemo enim tempora nam.</p>
+                                        <section class="portfolio-experiment" >
+                                                <a href="#0" class="btn10" >
+                                                    <span>button 10</span>
+                                                    <div class="transition"></div>
+                                                </a>
+                                        </section>
+                                    </div>
                                 </div>
                             </div>
                             <div class="container mt-3">
