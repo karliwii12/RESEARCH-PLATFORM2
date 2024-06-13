@@ -11,7 +11,6 @@ if (isset($_POST['buscar'])) {
     if ($respuesta && mysqli_num_rows($respuesta) > 0) {
         if ($respuesta && mysqli_num_rows($respuesta) > 0) {
             $id = mysqli_fetch_array($respuesta);
-            $valor = $id['Titulo'];
             echo "<script>
         location.href = '../pag/Star_b.php?buscar=$variable&a=t';
         </script>";
@@ -23,7 +22,6 @@ if (isset($_POST['buscar'])) {
         $respuesta_Autor = mysqli_query($conexion, $autor);
         if ($respuesta_Autor && mysqli_num_rows($respuesta_Autor) > 0) {
             $id = mysqli_fetch_array($respuesta_Autor);
-            $v_a = $id['Autor'];
             echo "<script>
         location.href = '../pag/Star_b.php?buscar=$variable&a=a';
         </script>";

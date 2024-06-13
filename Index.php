@@ -147,8 +147,8 @@ if (isset($_SESSION["Email"])) {
 
         <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/VistaContraseña.js"></script>
 </body>
