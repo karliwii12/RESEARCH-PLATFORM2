@@ -149,9 +149,6 @@ if (isset($_SESSION["Email"])) {
   
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-
-
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/VistaContraseña.js"></script>
 </body>
