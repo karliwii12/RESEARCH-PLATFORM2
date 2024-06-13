@@ -1,12 +1,13 @@
 <?php 
-
 session_start();
-
 include("conexion.php");
+
 $paginaStar = "../Pag/Star.php";
 $volver ="../Index.php";
 $email = $_POST ["EnviarEmail"];
 $contraseña = $_POST ["EnviarPaswoord"];
+// $c =  password_hash($contraseña, PASSWORD_BCRYPT);
+// echo $c;
 
  $verificar = "SELECT * FROM usuariologin WHERE Usuario='$email'";
  $encontrado = mysqli_query($conexion, $verificar);

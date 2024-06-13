@@ -13,7 +13,7 @@ body::before{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/FondoPreliminar.jpg') ;
+    background-image: url('../img/FondoPrueba2.jpg') ;
     /* URL de tu imagen de fondo */
     background-size: cover;
     background-position: center;
@@ -50,16 +50,19 @@ body::before{
     text-shadow: none;
     -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
             transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-    outline-color: rgba(255, 255, 255, 0.5);
+    outline-color: rgba(255, 255, 255, 0.808);
     outline-offset: 0px;
+    border-radius: 25%;
   }
 
 .btnfos5:hover {
     border: 1px solid;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.783), 0 0 20px rgba(255, 255, 255, 0.2);
     outline-offset: 15px;
     outline-color: rgba(255, 255, 255, 0);
     text-shadow: 1px 1px 2px #427388;
+    background-color: #056430;
+    color: #000000;
   }
 
 
@@ -126,7 +129,7 @@ body::before{
     cursor: hand;
     text-align: center;
     text-transform: capitalize;
-    border: 1px solid #5d0773;
+    border: 1px solid #056430;
     border-radius:50px;
     position: relative;
     overflow: hidden!important;
@@ -140,7 +143,7 @@ body::before{
 
 
 .btn10:hover{
-    border: 1px solid #640387;
+    border: 1px solid #056430;
     color: #ffffff!important;
 }
 .btn10::before {
@@ -148,7 +151,7 @@ body::before{
     width: 0%;
     height: 100%;
     display: block;
-    background: #056430;
+    background: #520364;
     position: absolute;
     -ms-transform: skewX(-20deg);
     -webkit-transform: skewX(-20deg); 
@@ -169,7 +172,7 @@ body::before{
     width: 0%;
     height: 100%;
     display: block;
-    background: #520364;
+    background: #056430;
     position: absolute;
   -ms-transform: skewX(-20deg);
     -webkit-transform: skewX(-20deg); 

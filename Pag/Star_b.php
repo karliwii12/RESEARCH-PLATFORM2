@@ -6,6 +6,14 @@ if (!isset($_SESSION["Email"])) {
     </script>";
     exit();
 }
+if (!isset($_GET["buscar"])) {
+    echo "<script>
+    alert('ups, Ocurrio un eror');
+location.href = 'Star.php';
+</script>";
+    exit();
+}
+$value = $_GET["buscar"];
 include ('../php/conexion.php');
 ?>
 
@@ -28,7 +36,7 @@ include ('../php/conexion.php');
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <a class="navbar-brand" href="#"><img src="../img/Logo.jpeg" alt="logo" width="15%"
+                        <a class="navbar-brand" href="Star.php"><img src="../img/Logo.jpeg" alt="logo" width="15%"
                                 style="border-radius: 100%;"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -45,7 +53,7 @@ include ('../php/conexion.php');
                                 <img src="../img/menu.png" alt="menu" width="60%">
                             </label>
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                id="Buscar" name="buscar">
+                                id="Buscar" name="buscar" value="<?php echo $value ?>">
                             <button class="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
 
@@ -318,118 +326,142 @@ include ('../php/conexion.php');
             </div>
             <div class="col-lg-6" id="2">
                 <div class="container" style="width: 90%;">
-                    <?php $conectar = "SELECT * FROM repositorio";
-                    $respuesta = mysqli_query($conexion, $conectar);
+                    <?php
+
+                    if ($_GET['a'] === "t") {
+
+                        $query = "SELECT * FROM repositorio WHERE LOWER(Titulo) LIKE '%$value%'";
+                    } else {
+
+                        $query = "SELECT * FROM repositorio WHERE LOWER(Autor) LIKE '%$value%'";
+                    }
+
+
+                    $respuesta = mysqli_query($conexion, $query);
+
 
                     if ($respuesta && mysqli_num_rows($respuesta) > 0) {
+
                         $contero = 0;
+
+
                         while ($fila = mysqli_fetch_assoc($respuesta)) {
-                            if ($contero == 0) {
-                                ?>
-                                <div class="row d-flex justify-content-center align-items-center"
-                                    style="padding: 10px; background: #BEF4F8; border-radius: 15px; border: solid 1px #000;">
-                                    <div class="col-md-4">
-                                        <b> <a href="../php/visitas.php?id=<?php echo $fila['id'] ?>" target="_blank" style="color: #000;">
-                                                <?php echo ucwords(strtolower($fila['Titulo'])); ?></a></b>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <i> <?php echo $fila['Descripcion']; ?></i>
-                                    </div>
-                                    <div class="col-md-2">
-                                       <p style="width: 100%;"> <?php echo ucwords(strtolower( $fila['Autor'])); ?></p>
-                                    </div>
-                                </div><br>
-                                <?php
-                                $contero++;
-                            } else {
-                                ?>
-                                <div class="row d-flex justify-content-center align-items-center"
-                                    style="padding: 10px; border-radius: 15px; background: lightgray; border: solid 1px #000;">
-                                    <div class="col-md-4">
-                                        <b> <a href="../php/visitas.php?id=<?php echo $fila['id'] ?>" target="_blank" style="color: #000;">
-                                                <?php echo ucwords(strtolower($fila['Titulo'])); ?></a></b>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <i> <?php echo $fila['Descripcion']; ?></i>
-                                    </div>
-                                    <div class="col-md-2">
-                                       <p style="width: 100%;"> <?php echo ucwords(strtolower( $fila['Autor'])); ?></p>
-                                    </div>
-                                </div> <br>
-                                <?php
-                                $contero = 0;
-                            }
+
+                            $background = ($contero % 2 == 0) ? '#BEF4F8' : 'lightgray';
+                            ?>
+                            <div class="row d-flex justify-content-center align-items-center"
+                                style="padding: 10px; background: <?php echo $background; ?>; border-radius: 15px; border: solid 1px #000;">
+                                <div class="col-md-4">
+                                    <b>
+                                        <a href="../php/visitas.php?id=<?php echo $fila['id'] ?>" target="_blank"
+                                            style="color: #000;">
+                                            <?php echo ucwords(strtolower($fila['Titulo'])); ?>
+                                        </a>
+                                    </b>
+                                </div>
+                                <div class="col-md-6">
+                                    <i> <?php echo $fila['Descripcion']; ?></i>
+                                </div>
+                                <div class="col-md-2">
+                                    <?php echo $fila['Autor']; ?>
+                                </div>
+                            </div>
+                            <br>
+                            <?php
+
+                            $contero++;
                         }
                     } else {
+
                         echo "No se encontraron resultados.";
                     }
                     ?>
                 </div>
+
             </div>
 
-            <div class="col-lg-3" id="3"  style=" background: #F3E8F7  ;">
+            <div class="col-lg-3" id="3" style=" background: #F3E8F7  ;">
                 <div class="container" id="contenedor" style="width: 90%;">
-                <br> <center>
+                    <br>
+                    <center>
                         <h2>Los 5 Articulos Más Visitados</h2>
                     </center>
                     <br>
                     <?php $sql = "SELECT id, Autor,  Titulo, Visitas FROM repositorio ORDER BY Visitas DESC";
                     $result = mysqli_query($conexion, $sql);
 
-                    if ($result->num_rows > 0) {?>
-                        <div class="row" style="background: #F2DDF9 ; border-radius: 8px; padding: 5px;">
-                        <div class="col-md-6">
-                         <b> <h3> Titulo</h3></b>  
-                        </div>
-                        <div class="col-md-6">
-                        <b>  <h3> Visitas</h3></b>
-                        </div>
-                        
-                    </div><br>
-                      <?PHP 
-                      $cont =0;
-                      $limite=0;
-                      while ($row = $result->fetch_assoc()) { 
+                    if ($result->num_rows > 0) { ?>
+                        <div class="row d-flex justify-content-center align-items-center"
+                            style="background: #F2DDF9 ; border-radius: 8px; padding: 5px;">
+                            <div class="col-md-6">
+                                <b>
+                                    <h3> Titulo</h3>
+                                </b>
+                            </div>
+                            <div class="col-md-6">
+                                <b>
+                                    <h3> Visitas</h3>
+                                </b>
+                            </div>
 
-                        if($cont==0){
-                            $cont++;?>
-                            <div class="row d-flex justify-content-center align-items-center"  style="background: #C2F9FD;  border: solid 1px #FCD0CB ; border-radius: 8px; padding: 5px;">
-                                <div class="col-md-10">
-                                    <a href="../php/visitas.php?id=<?php echo $row['id'] ?>" target="_blank" style="text-decoration: none; color: #000;">
-                                       <b><?php echo $row['Titulo'] ?></b> </a>
-                                </div>
-                                <div class="col-md-2">
-                                    <p style="font-size: large;"><?php echo $row['Visitas'] ?></p>
-                                </div>
-                                
-                            </div><br>
-                        <?php } else{ $cont=0; ?>
-                            <div class="row d-flex justify-content-center align-items-center"  style="background: lightgray; border: solid 1px #0E6CEC ; border-radius: 8px; padding: 5px;">
-                                <div class="col-md-10">
-                                    <a href="../php/visitas.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: #000;" target="_blank">
-                                       <b><?php echo $row['Titulo'] ?></b> </a>
-                                </div>
-                                <div class="col-md-2">
-                                    <p style="font-size: large;"><?php echo $row['Visitas'] ?></p>
-                                </div>
-                                
-                            </div><br>
-                       <?php } 
-                    $limite++;
-                    if($limite >= 5 ){
-                        break;
-                    }   
-                    }
+                        </div><br>
+                        <?PHP
+                        $cont = 0;
+                        $limite = 0;
+                        while ($row = $result->fetch_assoc()) {
+
+                            if ($cont == 0) {
+                                $cont++; ?>
+                                <div class="row d-flex justify-content-center align-items-center"
+                                    style="background: #C2F9FD;  border: solid 1px #FCD0CB ; border-radius: 8px; padding: 5px;">
+                                    <div class="col-md-10">
+                                        <a href="../php/visitas.php?id=<?php echo $row['id'] ?>" target="_blank"
+                                            style="text-decoration: none; color: #000;">
+                                            <b><?php echo $row['Titulo'] ?></b> </a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <p style="font-size: large;"><?php echo $row['Visitas'] ?></p>
+                                    </div>
+
+                                </div><br>
+                            <?php } else {
+                                $cont = 0; ?>
+                                <div class="row d-flex justify-content-center align-items-center"
+                                    style="background: lightgray; border: solid 1px #0E6CEC ; border-radius: 8px; padding: 5px;">
+                                    <div class="col-md-10">
+                                        <a href="../php/visitas.php?id=<?php echo $row['id'] ?>"
+                                            style="text-decoration: none; color: #000;" target="_blank">
+                                            <b><?php echo $row['Titulo'] ?></b> </a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <p style="font-size: large;"><?php echo $row['Visitas'] ?></p>
+                                    </div>
+
+                                </div><br>
+                            <?php }
+                            $limite++;
+                            if ($limite >= 5) {
+                                break;
+                            }
+                        }
                     } else {
                         echo "No se encontraron resultados.";
-                    } ?>
+                    }
+                    $conexion->close();
+                    ?>
                 </div>
             </div>
 
         </div>
-        <?php $conexion->close(); ?>
     </main>
     <footer></footer>
+
+
+
+
+
+
+
 
     </div>
     <!-- 
