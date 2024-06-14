@@ -87,7 +87,15 @@ if (isset($_SESSION["Email"])) {
                             <div class="container mt-3">
                             <div id="collapse_Inicio" class="collapse show" data-bs-parent="#accordionExample">
                                 <div class="contenerdorInicio">
-                                    <h1><center>RESEARCH PLATFORM</center></h1>
+                                    <h1 style="color:forestgreen"><center>RESEARCH PLATFORM</center></h1>
+                                    <h5 ><center>Facilita el acceso a publicaciones y resultados de investigación para estudiantes, 
+                                        académicos y profesionales.</center></h5>
+                                        <section class="portfolio-experiment">
+                                                <a href="#0" class="btn10">
+                                                    <span>Inicia Sesion </span>
+                                                    <div class="transition"></div>
+                                                </a>
+                                            </section>
                                 </div>
                             </div>
                             <div class="container mt-3">
@@ -101,6 +109,12 @@ if (isset($_SESSION["Email"])) {
                                         proyecto web. Estos repositorios permiten a los equipos de desarrollo trabajar
                                         de manera conjunta y eficiente, manteniendo un registro completo de los cambios
                                         realizados en el código fuente.
+                                        <section class="portfolio-experiment">
+                                                <a href="#0" class="btn10" class="btn btn-success">
+                                                    <span>Informacion extra </span>
+                                                    <div class="transition"></div>
+                                                </a>
+                                        </section>
                                     </div>
                                 </div>
                             </div>
