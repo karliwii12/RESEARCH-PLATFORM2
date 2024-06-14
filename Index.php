@@ -25,7 +25,7 @@ if (isset($_SESSION["Email"])) {
         <div class="container " style=" padding: 5%; width: 100%; margin: auto; height: 100%; ">
             <div class="row " style="max-width: 160%; padding:0%; max-height: 160%; height:23em">
                 <div class="col-md-5 d-flex justify-content-center align-items-center" style="padding:0; background: #000000;">
-                    <img src="img/FondoPrueba.jpg" alt="" style="width: 100%; max-height: 150%">
+                    <img src="img/research-7232614_1280.jpg" alt="" style="width: 100%; max-height: 150%">
                     <div class="cont">
                         <!-- <img src="" alt="LOGO" width="60%" style="border-radius: 50%;"> -->
                     </div>
@@ -87,7 +87,7 @@ if (isset($_SESSION["Email"])) {
                             <div class="container mt-3">
                             <div id="collapse_Inicio" class="collapse show" data-bs-parent="#accordionExample">
                                 <div class="contenerdorInicio">
-                                    
+                                    <h1><center>RESEARCH PLATFORM</center></h1>
                                 </div>
                             </div>
                             <div class="container mt-3">

@@ -78,6 +78,8 @@ body::before {
   
 }
 
+
+
 .tituloInicio {
   text-align: center;
   color: #126b27;
@@ -254,3 +256,5 @@ body::before {
   opacity: 1;
   width: 120%;
 }
+
+
