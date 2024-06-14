@@ -1,22 +1,48 @@
-
 :root {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
-  color: #444444;
+  background: #f5f6f7;
+  color: #101010;
 }
 
 a {
-  color: #4154f1;
   text-decoration: none;
 }
 
 a:hover {
-  color: #717ff5;
   text-decoration: none;
+}
+
+.contenedorUno {
+  padding: 10px;
+  border-radius: 15px;
+  background: #faf8fa;
+  border: solid 1px #f6f5f5;
+  color: rgb(7, 7, 7);
+}
+
+.contenedorCero {
+  background: #fcfcfc;
+  border: solid 1px #f8f7f7;
+  border-radius: 8px;
+  padding: 5px;
+  color: black;
+}
+
+.contenedorCero a {
+  color: #0e0e0e;
+}
+
+.contenedorUno a {
+  color: rgb(16, 15, 15);
+}
+
+
+.contenedorCero p {
+  color: #0e0e0e;
 }
 
 h1,
@@ -32,14 +58,14 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  margin-top: 60px;
-  padding: 20px 30px;
+  margin-top: 30%;
   transition: all 0.3s;
 }
 
 @media (max-width: 1199px) {
-  #main {
-    padding: 20px;
+  main {
+    margin-top: 30%;
+
   }
 }
 
@@ -351,6 +377,7 @@ h6 {
 @media (min-width: 1200px) {
   .logo {
     width: 280px;
+    margin: auto;
   }
 }
 
@@ -484,72 +511,7 @@ h6 {
   padding: 3px 6px;
 }
 
-.header-nav .notifications {
-  inset: 8px -15px auto auto !important;
-}
 
-.header-nav .notifications .notification-item {
-  display: flex;
-  align-items: center;
-  padding: 15px 10px;
-  transition: 0.3s;
-}
-
-.header-nav .notifications .notification-item i {
-  margin: 0 20px 0 10px;
-  font-size: 24px;
-}
-
-.header-nav .notifications .notification-item h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.header-nav .notifications .notification-item p {
-  font-size: 13px;
-  margin-bottom: 3px;
-  color: #919191;
-}
-
-.header-nav .notifications .notification-item:hover {
-  background-color: #f6f9ff;
-}
-
-.header-nav .messages {
-  inset: 8px -15px auto auto !important;
-}
-
-.header-nav .messages .message-item {
-  padding: 15px 10px;
-  transition: 0.3s;
-}
-
-.header-nav .messages .message-item a {
-  display: flex;
-}
-
-.header-nav .messages .message-item img {
-  margin: 0 20px 0 10px;
-  max-height: 40px;
-}
-
-.header-nav .messages .message-item h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #444444;
-}
-
-.header-nav .messages .message-item p {
-  font-size: 13px;
-  margin-bottom: 3px;
-  color: #919191;
-}
-
-.header-nav .messages .message-item:hover {
-  background-color: #f6f9ff;
-}
 
 .header-nav .profile {
   min-width: 240px;
@@ -600,7 +562,19 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #00563B;
+  color: #FFD9DE;
+}
+
+.vis {
+  background: #ffffff;
+  border: solid 1px #fcd0cb05;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.vis p{
+  color: #0e0e0e;
 }
 
 @media (max-width: 1199px) {
@@ -697,7 +671,6 @@ h6 {
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
   background: #f6f9ff;
 }
 

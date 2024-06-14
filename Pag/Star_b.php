@@ -97,7 +97,7 @@ include ('../php/conexion.php');
                         $result = mysqli_query($conexion, $sql);
 
                         if ($result->num_rows > 0) { ?>
-                            <div class="row" style="background: #F2DDF9 ; border-radius: 8px; padding: 5px;">
+                            <div class="row" style=" border-radius: 8px; padding: 5px;">
                                 <div class="col-md-6">
                                     <b>
                                         <h3> Titulo</h3>
@@ -114,12 +114,10 @@ include ('../php/conexion.php');
                             $cont = 0;
                             $limite = 0;
                             while ($row = $result->fetch_assoc()) {
-
                                 if ($cont == 0) {
                                     $cont++; ?>
                                     <div class="vis">
-                                        <div class="row d-flex justify-content-center align-items-center"
-                                            style="background: #C2F9FD;  border: solid 1px #FCD0CB ; border-radius: 8px; padding: 5px;">
+                                        <div class="row d-flex justify-content-center align-items-center">
                                             <div class="col-md-10">
                                                 <a href="../php/visitas.php?id=<?php echo $row['id'] ?>" target="_blank"
                                                     style="text-decoration: none; color: #000; font-size: 12px;">
@@ -134,8 +132,7 @@ include ('../php/conexion.php');
                                 <?php } else {
                                     $cont = 0; ?>
                                     <div class="vis">
-                                        <div class="row d-flex justify-content-center align-items-center"
-                                            style="font-size: 12px; background: lightgray; border: solid 1px #0E6CEC ; border-radius: 8px; padding: 5px;">
+                                        <div class="row d-flex justify-content-center align-items-center">
                                             <div class="col-md-10">
                                                 <a href="../php/visitas.php?id=<?php echo $row['id'] ?>"
                                                     style="text-decoration: none; color: #000;" target="_blank">
@@ -176,10 +173,10 @@ include ('../php/conexion.php');
                     if ($respuesta && mysqli_num_rows($respuesta) > 0) {
                         $contero = 0;
                         while ($fila = mysqli_fetch_assoc($respuesta)) {
-                            $background = ($contero % 2 == 0) ? '#BEF4F8' : 'lightgray';
+                            $background = ($contero % 2 == 0) ? '#6F2DA8' : '#FFFF';
                             ?>
                             <div class="row d-flex justify-content-center align-items-center"
-                                style="padding: 10px; background: <?php echo $background; ?>; border-radius: 15px; border: solid 1px #000;">
+                                style="padding: 10px; background: <?php echo $background; ?>; border-radius: 15px; border: solid 1px #;">
                                 <div class="col-md-4">
                                     <b>
                                         <a href="../php/visitas.php?id=<?php echo $fila['id'] ?>" target="_blank"
@@ -188,10 +185,10 @@ include ('../php/conexion.php');
                                         </a>
                                     </b>
                                 </div>
-                                <div class="col-md-5" style="font-size: 12px;">
+                                <div class="col-md-5" style="font-size: 12px; color:#000">
                                     <i> <?php echo $fila['Descripcion']; ?></i>
                                 </div>
-                                <div class="col-md-3" style="font-size:  13px;">
+                                <div class="col-md-3" style="font-size:  13px; color:#000">
                                     <?php echo $fila['Autor']; ?>
                                 </div>
                             </div>
